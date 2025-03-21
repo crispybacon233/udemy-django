@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <p>Name: {{user.name}}</p>
+    <p>Educuation: {{user.education}}</p>
+    <p>About Me: {{user.description}}</p>
+
+    <p>Likes:</p>
+    {% for like in user.likes %}
+    <li>{{ like }}</li>
+    {% endfor %}
+
+    <p>Dislikes:</p>
+    {% for dislike in user.dislikes %}
+    <li>{{ dislike }}</li>
+    {% endfor %}
+
+{% endblock %}
