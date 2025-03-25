@@ -1,5 +1,16 @@
 {% extends "base.html" %}
 
 {% block content %}
-<p>projects page</p>
+
+<h1>Welcome to my Projects!</h1>
+
+{% for project in projObjs %}
+    <div class="projectDesc">
+        <h3 class="title">{{ project.title }}</h3>
+        <div>Total Votes: {{ project.vote_total }}</div>
+        <div>Pos Votes: {{ project.vote_ratio }}%</div>
+        <a href="{% url 'project' slug=project.id %}">View</a>
+    </div>
+{% endfor %}
+
 {% endblock %}

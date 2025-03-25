@@ -1,18 +1,20 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <p>Name: {{user.name}}</p>
-    <p>Educuation: {{user.education}}</p>
-    <p>About Me: {{user.description}}</p>
 
-    <p>Likes:</p>
-    {% for like in user.likes %}
-    <li>{{ like }}</li>
-    {% endfor %}
+<h1>{{ projectObj.title }}</h1>
 
-    <p>Dislikes:</p>
-    {% for dislike in user.dislikes %}
-    <li>{{ dislike }}</li>
+
+<div class="projectDesc">
+    <p class="desc">Description: {{ projectObj.description }}</p>
+    <ul>
+    {% for tag in projectObj.tags.all %}
+        <li class="tag">{{ tag }}</li>
     {% endfor %}
+    </ul>
+    <div>Total Votes: {{ projectObj.vote_total }}</div>
+    <div>Pos Votes: {{ projectObj.vote_ratio }}%</div>
+</div>
+
 
 {% endblock %}
