@@ -4,13 +4,33 @@
 
 <h1>Welcome to my Projects!</h1>
 
-{% for project in projObjs %}
-    <div class="projectDesc">
-        <h3 class="title">{{ project.title }}</h3>
-        <div>Total Votes: {{ project.vote_total }}</div>
-        <div>Pos Votes: {{ project.vote_ratio }}%</div>
-        <a href="{% url 'project' slug=project.id %}">View</a>
-    </div>
-{% endfor %}
+<table>
+    <tr>
+        <th>Title</th>
+        <th>Total Votes</th>
+        <th>Pos Votes</th>
+    </tr>
+
+    {% for project in projObjs %}
+        <tr>
+        <td>{{ project.title }}</td>
+        <td>{{ project.vote_total }}</td>
+        <td>{{ project.vote_ratio }}</td>
+        <td><a href="{% url 'project' pk=project.id %}">View</a></td>
+        <td><a href="{% url 'update-project' pk=project.id %}">Edit</a></td>
+        <td><a href="{% url 'delete-project' pk=project.id %}">Delete</a></td>
+        </tr>
+    {% endfor %}
+</table>
+
+<!-- {% for project in projObjs %}
+<div class="projectDesc">
+    <h3 class="title">{{ project.title }}</h3>
+    <div>Total Votes: {{ project.vote_total }}</div>
+    <div>Pos Votes: {{ project.vote_ratio }}%</div>
+    <a href="{% url 'project' pk=project.id %}">View</a>
+    <a href="{% url 'update-project' pk=project.id %}">Edit</a>
+</div>
+{% endfor %} -->
 
 {% endblock %}
