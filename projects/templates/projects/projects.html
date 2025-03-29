@@ -7,6 +7,7 @@
 <table>
     <tr>
         <th>Title</th>
+        <th>Owner</th>
         <th>Total Votes</th>
         <th>Pos Votes</th>
     </tr>
@@ -14,6 +15,7 @@
     {% for project in projObjs %}
         <tr>
         <td>{{ project.title }}</td>
+        <td>{{ project.owner.name }}</td>
         <td>{{ project.vote_total }}</td>
         <td>{{ project.vote_ratio }}</td>
         <td><a href="{% url 'project' pk=project.id %}">View</a></td>
