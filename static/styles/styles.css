@@ -1,0 +1,48 @@
+body {
+    margin: 0;
+    font-family: "Inter";
+    letter-spacing: 0.1rem;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.navBar {
+    color: #e7e5e4;
+    background-color: #57534e;
+    justify-content: space-between;
+    align-items: center;
+    height: 6rem;
+    display: flex;
+}
+
+.leftNavBar, .rightNavBar {
+    height: 100%;
+    margin: 5rem;
+}
+
+.leftNavBar a {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.leftNavBar img {
+    height: 75%;
+}
+
+.rightNavBar {
+    width: 40%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 1rem;
+}
+
+.rightNavBar a:hover {
+    text-decoration: underline;
+    text-underline-offset: 4px;
+}

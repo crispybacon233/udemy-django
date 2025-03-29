@@ -1,7 +1,19 @@
 {% load static %}
 {% block content %}
-<img src="{% static 'images/logo.svg' %}" alt="Logo">
-<a href="/">Home Page</a>
-<a href="{% url 'projects' %}">Projects</a>
-<a href="{% url 'add-project' %}">Add Project</a>
+<div class="navBar">
+    <div class="leftNavBar">
+        <a href="/">
+            <img src="{% static 'images/logo.svg' %}" alt="Logo">
+        </a>
+    </div>
+    <div class="rightNavBar">
+        <a href="/">Developers</a>
+        <a href="/">Inbox</a>
+        <a href="/">My Account</a>
+        <a href="{% url 'projects' %}">Projects</a>
+        <a href="{% url 'add-project' %}">Add Project</a>
+    </div>
+
+</div>
+
 {% endblock %}
