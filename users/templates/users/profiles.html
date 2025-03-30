@@ -12,6 +12,9 @@
             <p>{{ profile.name }}</p>
             <p>{{ profile.short_intro|slice:":60"}}</p>
             <p>{{ profile.bio|slice:":150" }}</p>
+            {% for skill in profile.skill_set.all %}
+            <small>{{ skill }}</small>
+            {% endfor %}
         </div>
 
         {% endfor %}
