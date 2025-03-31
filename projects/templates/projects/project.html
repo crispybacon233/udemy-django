@@ -1,8 +1,12 @@
 {% extends 'base.html' %}
 {% load static %}
+
+
 {% block content %}
 
+
 <h1>{{ projectObj.title }}</h1>
+<a href="{% url 'user-profile-page' projectObj.owner.id %}">{{ projectObj.owner }}</a>
 <img style="width: 500px;" src="{{ projectObj.featured_image.url }}" alt="Featured Image">
 <div class="projectDesc">
     <p class="desc">Description: {{ projectObj.description }}</p>

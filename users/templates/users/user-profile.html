@@ -8,6 +8,12 @@
         <p>{{ profile.name }}</p>
         <p>{{ profile.short_intro|slice:":60"}}</p>
         <p>{{ profile.bio|slice:":150" }}</p>
+
+        <div class="projectsContainer">
+            {% for project in profile.project_set.all %}
+            <a href="{% url 'project' project.id %}">{{ project }}</a>
+            {% endfor %}
+        </div>
         <div class="skillsContainer">
             {% for skill in profile.skill_set.all %}
             <span class="skillPill">
