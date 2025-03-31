@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="profileContainer" style="height: 50rem; display: flex; justify-content: center; align-items: center;">
+    <div class="profileCard">
+        <img src="{{ profile.profile_image.url }}" alt="">
+        <p>{{ profile.name }}</p>
+        <p>{{ profile.short_intro|slice:":60"}}</p>
+        <p>{{ profile.bio|slice:":150" }}</p>
+        <div class="skillsContainer">
+            {% for skill in profile.skill_set.all %}
+            <span class="skillPill">
+                <small>{{ skill }}</small>
+            </span>
+        {% endfor %}
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}

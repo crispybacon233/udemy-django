@@ -70,7 +70,8 @@ a {
 .profileCard {
     height: 70%;
     width: 30rem;
-    border: 1px solid #57534e;
+    border: 2px solid #57534e;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.20);
     border-radius: 5%;
     display: flex;
     justify-content: flex-start;
@@ -86,4 +87,19 @@ a {
     width: 10rem;
     border-radius: 50%;
     object-fit: cover;
+}
+
+.skillsContainer {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    gap: 0.5rem;
+}
+
+.skillPill {
+    background-color: aquamarine;
+    border-radius: 9999px;
+    text-align: center;
+    padding: 0.5rem 1rem;
 }

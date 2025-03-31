@@ -7,15 +7,22 @@
     <div class="cardsContainer">
         {% for profile in profiles %}
 
+        <a href="{% url 'user-profile-page' profile.id %}">
         <div class="profileCard">
             <img src="{{ profile.profile_image.url }}" alt="">
             <p>{{ profile.name }}</p>
             <p>{{ profile.short_intro|slice:":60"}}</p>
             <p>{{ profile.bio|slice:":150" }}</p>
-            {% for skill in profile.skill_set.all %}
-            <small>{{ skill }}</small>
+            <div class="skillsContainer">
+                {% for skill in profile.skill_set.all %}
+                <span class="skillPill">
+                    <small>{{ skill }}</small>
+                </span>
             {% endfor %}
+            </div>
+
         </div>
+        </a>
 
         {% endfor %}
     </div>
